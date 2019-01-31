@@ -1,0 +1,21 @@
+.card{
+    height: 300px;
+    width: 250pt;
+    display: flex;
+    margin: 10pt;
+    float: left;
+    padding:30px;
+}
+.card-img-top{
+    height: 280px;
+    width: 200pt;
+}
+.card-img-top1{
+    height: 200px;
+    width: 200px;
+
+}
+.card-body{
+    height: 25px;
+    width: 250px;
+}
