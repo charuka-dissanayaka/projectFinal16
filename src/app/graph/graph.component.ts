@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
 // import { test1 } from '../../assets/javascript/main'; 
 @Component({
   selector: 'app-graph',
@@ -13,7 +15,9 @@ export class GraphComponent implements OnInit {
 
   ngOnInit() {
   }
-    
+  // public onClick() {
+  //   // this.router.navigate(['\bra']);
+  // }
 
 
 

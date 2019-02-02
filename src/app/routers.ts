@@ -1,6 +1,7 @@
+import { LogoutComponent } from './logout/logout.component';
 import { BackComponent } from './back/back.component';
 import { BrasComponent } from './graph/bras/bras.component';
-import { AdminComComponent } from './admin-com/admin-com.component';
+
 import { FrontComponent } from './front/front.component';
 import { GraphComponent } from './graph/graph.component';
 
@@ -46,11 +47,7 @@ export const appRoutes: Routes = [
         component: StudentHomeComponent,
         canActivate: [AuthGaurd, StudentAuthGuard]
       },
-      {
-        path:'admin-com',
-        component:AdminComComponent,
-      },
-          
+       
           {
             path:"\intimate",
             component:IntimateComponent,
@@ -60,6 +57,12 @@ export const appRoutes: Routes = [
           {
             path:"\graph",
             component:GraphComponent,
+            children:[
+              { path:"/graph/bra",
+              component:BrasComponent
+                
+            }
+            ]
           },
           {
             path:"\back",
@@ -68,8 +71,11 @@ export const appRoutes: Routes = [
         {
           path:"\front",
           component:FrontComponent,
-        }
-      
+        },
+      {
+          path:"\logout",
+          component:LogoutComponent,
+      }
 
         
       

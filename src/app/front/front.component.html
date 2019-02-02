@@ -1,43 +1,81 @@
+<div class="card">
 
-<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header text-center">
-      <h4 class="modal-title w-100 font-weight-bold">Subscribe</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body mx-3">
-      <div class="md-form mb-5">
-        <i class="fas fa-user prefix grey-text"></i>
-        <input type="text" id="form3" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="form3">FIRST NAME</label>
-      </div>
-      
-
-      <div class="md-form mb-4">
-        <i class="fas fa-envelope prefix grey-text"></i>
-        <input type="email" id="form2" class="form-control validate">
-        <label data-error="wrong" data-success="right" for="form2">Your email</label>
-      </div>
-
-    </div>
-    <div class="modal-footer d-flex justify-content-center">
-      <button class="btn btn-indigo">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-    </div>
+  <!-- Card image -->
+  <div class="view overlay">
+    <img class="card-img-top" src="/assets/garmntShow/bra3.front.svg" alt="Card image cap" (click)="addOnClick($event)">
+    <a href="#!">
+    <div class="mask rgba-white-slight"></div>
+  </a>
   </div>
-</div>
+
+  <!-- Card content -->
+  <div class="card-body">
+    
+    <!-- Button -->
+    <a href="javascript:void(0)" class="btn btn-primary" (click)="submit()">back</a>
+
+
+
+  </div>
+
 </div>
 
-<div class="text-left">
-<a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalSubscriptionForm">EDIT PROFILE</a>
-</div>
 
-
-
-<div class="button">
-    <button type="button" class="btn btn-default">Settings</button>
-    <a type="button" class="btn-floating cyan"><i class="fab fa-setting" aria-hidden="true"></i></a>
-</div>
+<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <!--Modal: Contact form-->
+  <div class="modal-dialog cascading-modal" role="document">
+  
+      <!--Content-->
+      <div class="modal-content">
+  
+          <!--Header-->
+          <div class="modal-header primary-color white-text">
+              <h4 class="title">
+                  <i class="fa fa-pencil-alt"></i> Contact form</h4>
+              <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+              </button>
+          </div>
+          <!--Body-->
+          <div class="modal-body">
+  
+              <!-- Material input name -->
+              <div class="md-form form-sm">
+                  <i class="fa fa-envelope prefix"></i>
+                  <input type="text" id="materialFormNameModalEx1" class="form-control form-control-sm">
+                  <label for="materialFormNameModalEx1">Your name</label>
+              </div>
+  
+              <!-- Material input email -->
+              <div class="md-form form-sm">
+                  <i class="fa fa-lock prefix"></i>
+                  <input type="password" id="materialFormEmailModalEx1" class="form-control form-control-sm">
+                  <label for="materialFormEmailModalEx1">Your email</label>
+              </div>
+  
+              <!-- Material input subject -->
+              <div class="md-form form-sm">
+                  <i class="fa fa-tag prefix"></i>
+                  <input type="text" id="materialFormSubjectModalEx1" class="form-control form-control-sm">
+                  <label for="materialFormSubjectModalEx1">Subject</label>
+              </div>
+  
+              <!-- Material textarea message -->
+              <div class="md-form form-sm">
+                  <i class="fa fa-pencil-alt prefix"></i>
+                  <textarea type="text" id="materialFormMessageModalEx1" class="md-textarea form-control"></textarea>
+                  <label for="materialFormMessageModalEx1">Your message</label>
+              </div>
+  
+              <div class="text-center mt-4 mb-2">
+                  <button class="btn btn-primary">Send
+                      <i class="fa fa-send ml-2"></i>
+                  </button>
+              </div>
+  
+          </div>
+      </div>
+      <!--/.Content-->
+  </div>
+  <!--/Modal: Contact form-->
+  </div>
