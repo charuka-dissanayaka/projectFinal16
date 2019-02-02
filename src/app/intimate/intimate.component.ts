@@ -6,30 +6,30 @@ import { IntimateService } from '../services/intimate.service';
 import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-intimate',
-  templateUrl:`./intimate.component.html`,
+  templateUrl: `./intimate.component.html`,
 
   styleUrls: ['./intimate.component.css'],
   providers: [IntimateService]
 })
-export class IntimateComponent  implements OnInit {
+export class IntimateComponent implements OnInit {
 
   matrix = new Array(10);
   count = 0;
   data = {
-    matrix : null
+    matrix: null
   }
 
   constructor(
     private http: Http,
     private Intimates: IntimateService,
-    private router:Router
-    ) {
+    private router: Router
+  ) {
     this.count = 0;
-    for(var i=0; i<10; i++){
+    for (var i = 0; i < 10; i++) {
       this.matrix[i] = new Array(10);
     }
-    for(var i=0; i<10; i++){
-      for(var j=0; j<10; j++){
+    for (var i = 0; i < 10; i++) {
+      for (var j = 0; j < 10; j++) {
         this.matrix[i][j] = false;
       }
     }
@@ -44,7 +44,7 @@ export class IntimateComponent  implements OnInit {
     console.log(map)
     console.log(pos_x)
     console.log(point)
-   
+
     console.log(point)
 
     setTimeout(() => {
@@ -53,21 +53,21 @@ export class IntimateComponent  implements OnInit {
       point.appendTo(map)
       point.text('1')
     }, 2000);
-  
+
   }
 
-  addOnClick(Event){
+  addOnClick(Event) {
     console.log("add on click")
-    console.log(Math.floor((Event.x)/32));
-    console.log(Math.floor((Event.y)/39));
-    var x = Math.floor((Event.x)/32);
-    var y = Math.floor((Event.y)/39);
-     if(x>=10)
-       x = 9;
-     if(y>=10)
-       y = 9;
-     this.count++;
-     this.matrix[x][y] = true;
+    console.log(Math.floor((Event.x) / 32));
+    console.log(Math.floor((Event.y) / 39));
+    var x = Math.floor((Event.x) / 32);
+    var y = Math.floor((Event.y) / 39);
+    if (x >= 10)
+      x = 9;
+    if (y >= 10)
+      y = 9;
+    this.count++;
+    this.matrix[x][y] = true;
     // console.log(this.matrix);
     this.Intimates.AddMatrix(this.matrix)
       .subscribe(responce => {
@@ -75,7 +75,7 @@ export class IntimateComponent  implements OnInit {
       })
   }
 
-  submit(){
+  submit() {
     this.data.matrix = JSON.stringify(this.matrix);
     console.log(this.matrix);
     this.http.post('http://localhost:3000/intimate/', this.matrix);
@@ -83,20 +83,17 @@ export class IntimateComponent  implements OnInit {
   }
 
   ngOnInit() {
-    
- 
-      }
-      
-      function () {
-      
+
+
   }
 
-  public onClick(){
+
+  public onClick() {
     this.router.navigate(['\back']);
   }
-    public onClickEvent(){
-      this.router.navigate(['\front']);
+  public onClickEvent() {
+    this.router.navigate(['\front']);
 
-    }
-   
+  }
+
 }

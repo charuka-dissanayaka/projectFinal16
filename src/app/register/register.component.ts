@@ -25,8 +25,8 @@ export class RegisterComponent implements OnInit {
     private registerService: RegisterService,
     fb: FormBuilder) {
     this.form = fb.group({
-      fname: ['', Validators.required],
-      lname: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
       email: ['', [
         Validators.required,
         Validators.email
@@ -38,15 +38,17 @@ export class RegisterComponent implements OnInit {
       confirmPassword: ['', [
         Validators.required,
       ]],
-      role: ['', Validators.required]
+      role: ['', Validators.required],
+      rowId: ['', Validators.required]
     });
   }
 
-  get fname() { return this.form.get('fname'); }
-  get lname() { return this.form.get('lname'); }
+  get firstname() { return this.form.get('firstname'); }
+  get lastname() { return this.form.get('lastname'); }
   get email() { return this.form.get('email'); }
   get password() { return this.form.get('password'); }
   get role() { return this.form.get('role'); }
+  get rowId() { return this.form.get('rowId'); }
   get confirmPassword() { return this.form.get('confirmPassword'); }
 
   onSubmit(regForm) {
@@ -58,6 +60,7 @@ export class RegisterComponent implements OnInit {
   }
 
   userRegister(user) {
+    console.log(user)
     this.registerService.registerUser(user).subscribe(response => {
       console.log(response);
       if (response.json().has) {
@@ -74,4 +77,20 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+
+ 
+textBoxDisabled = true;
+
+toggle1(){
+  console.log("toggle function");
+  this.textBoxDisabled =false ;
 }
+toggle2(){
+  console.log("toggle function");
+  this.textBoxDisabled = true;
+}
+
+
+}
+
+

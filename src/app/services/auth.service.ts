@@ -10,7 +10,7 @@ export class AuthService {
 
   helper = new JwtHelperService();
 
-  constructor(
+  constructor(  
     private http: Http,
     private router: Router
   ) { }

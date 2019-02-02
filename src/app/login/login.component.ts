@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     fb: FormBuilder) {
     this.form = fb.group({
-      username: ['', [
+      email: ['', [
         Validators.required,
         Validators.email
       ]],
@@ -33,8 +33,8 @@ export class LoginComponent implements OnInit {
     //this.authService.logOut();
   }
 
-  get username(){
-    return this.form.get('username');
+  get email(){
+    return this.form.get('email');
   }
 
   get password(){
@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
     console.log(user)
     this.authService.loginUser(user).subscribe(
       res=>{
+        console.log(res)
         if(res.json().token){
           localStorage.setItem('token', res.json().token);
           if(this.authService.currentUser.user.role == 'tutor'){

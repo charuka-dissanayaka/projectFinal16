@@ -9,6 +9,7 @@ export class RegisterService {
   constructor(private http:Http) { }
 
   registerUser(user){
+    console.log(user)
     return this.http.post("http://localhost:3000/user/register", user);
   }
 
