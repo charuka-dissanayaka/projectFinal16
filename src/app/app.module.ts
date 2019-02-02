@@ -30,8 +30,9 @@ import { IntimateComponent } from './intimate/intimate.component';
 import { GraphComponent } from './graph/graph.component';
 import { BackComponent } from './back/back.component';
 import { FrontComponent } from './front/front.component';
-import { AdminComComponent } from './admin-com/admin-com.component';
+
 import { BrasComponent } from './graph/bras/bras.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +52,10 @@ import { BrasComponent } from './graph/bras/bras.component';
     GraphComponent,
     BackComponent,
     FrontComponent,
-    AdminComComponent,
+  
     BrasComponent,
+  
+    LogoutComponent,
    
   ],
   imports: [
